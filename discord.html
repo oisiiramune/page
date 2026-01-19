@@ -43,11 +43,15 @@
                     background: fffecb;
                     margin:0;
                 }
-                body::before { 
+                body::before {
                     content: "";
-                    display: block;
-                    height:10vw;
-                    background: #1b1d22;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: calc(4vw + env(safe-area-inset-top))
+                    background: #fffecb;
+                    z-index: 9999;
                 }
                 .icon {
                     width:3vw;
