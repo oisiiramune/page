@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta property="og:title" content="webhook学習用">
+        <title>SPA、むぅ</title>
+    </head>
+    <style>
+        html {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background: #1b1e22;
+            color: aliceblue;
+        }
+        button, textarea, input {
+            font-size:2rem;
+            padding: 1rem 2rem;
+            margin:0.2rem;
+            border-radius:8px;
+        }
+        textarea {
+            width:90%;
+            height:6em;
+            resize:vertical;
+        }
+        p {
+            font-size:5vw;
+            color:#fffffff;
+        }
+    </style>
+    <body>
+        <form id="hook">
+            <textarea type="text" id="content" placeholder="ここに送信したい文字を入力"></textarea>
+            <input type="text" id="webhook" placeholder="webhook uri">
+            <input type="text" id="num" placeholder="送信回数">
+            <button type="submit">送信</button>
+        </form>
+        <script>
+             document.getElementById('hook').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const contentspam = document.getElementById('content').value;
+                const webhook = document.getElementById('webhook').value;
+                if (true){
+                    let num = Number(document.getElementById('num').value);
+                    while (num > 0){
+                        fetch(webhook, {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({ content: contentspam })
+                        })
+                        num--;
+                    }
+                } else {
+                    alert('不正なurl');
+                }
+            })
+        </script>
+    </body>
+</html>
