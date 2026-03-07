@@ -7,6 +7,6 @@
         <p id="wait"></p>
     </body>
     <script>
-        fetch("https://ipinfo.io/json", {method: "GET"}).then(r => r.json()).then(data => {document.getElementById("wait").textContent = data.json});
+        fetch("https://ipinfo.io/json", {method: "GET"}).then(r => r.json()).then(data => {document.getElementById("wait").textContent = data});
     </script>
 </html>
