@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta property="og:title" content="transfer test">
+    </head>
+    <body>
+        <p id="wait"></p>
+    </body>
+    <script>
+        fetch("https://ipinfo.io/json", {method: "GET"}).then(ip => ip.json()).then(data => {document.getElementById("wait").textContent = ip.jsonip.json});
+    </script>
+</html>
