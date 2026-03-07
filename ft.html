@@ -4,9 +4,9 @@
         <meta property="og:title" content="transfer test">
     </head>
     <body>
-        <p id="wait"></p>
+        <pre id="wait"></pre>
     </body>
     <script>
-        fetch("https://ipinfo.io/json", {method: "GET"}).then(r => r.json()).then(data => {document.getElementById("wait").textContent = JSON.stringify(data,null,2)});
+        fetch("https://ipinfo.io/json", {method: "GET"}).then(r => r.json()).then(data => {document.getElementById("wait").textContent = JSON.stringify(data,null,5)});
     </script>
 </html>
